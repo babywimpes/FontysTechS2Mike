@@ -1,0 +1,91 @@
+﻿<Window x:Class="WPFClassDefinitions.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFClassDefinitions"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="33*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <TextBlock Text="Voeg vak toe" FontSize="20"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="VakNaam" Width="100"/>
+                <TextBox x:Name="tbCourseName" Width="100" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="VakCode" Width="100"/>
+                <TextBox x:Name="tbCourseCode" Width="100"  />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="SBU" Width="100"/>
+                <TextBox x:Name="tbSBU" Width="100" />
+            </StackPanel>
+            <Button x:Name="btnAddCourse" Click="btnAddCourse_Click" Content="Voeg toe"/>
+            <ListView x:Name="lvCourses" ItemsSource="{Binding courseCollection}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="80" Header="VakNaam" DisplayMemberBinding="{Binding CourseName}"  />
+                        <GridViewColumn Width="80" Header="VakCode" DisplayMemberBinding="{Binding CourseCode}" />
+                        <GridViewColumn Width="80" Header="SBU" DisplayMemberBinding="{Binding SBU}"  />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="Voeg resultaat toe" FontSize="20"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="VakNaam" Width="100"/>
+                <TextBox x:Name="tbCourseName2" Width="100" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Resultaat" Width="100"/>
+                <TextBox x:Name="tbCourseResult" Width="100"  />
+            </StackPanel>
+            <Button x:Name="btnAddResult" Click="btnAddResult_Click" Content="Voeg toe" Margin="0,17,0,0"/>
+            <ListView x:Name="lvResults" ItemsSource="{Binding resultCollection}" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="80" Header="VakNaam" DisplayMemberBinding="{Binding CourseName}"  />
+                        <GridViewColumn Width="80" Header="Cijfer" DisplayMemberBinding="{Binding CourseResults}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2">
+            <TextBlock Text="Voeg vak toe" FontSize="20"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="VakNaam" Width="100"/>
+                <TextBox x:Name="tbCourseName" Width="100" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="VakCode" Width="100"/>
+                <TextBox x:Name="tbCourseCode" Width="100"  />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="SBU" Width="100"/>
+                <TextBox x:Name="tbSBU" Width="100" />
+            </StackPanel>
+            <Button x:Name="btnAddCourse" Click="btnAddCourse_Click" Content="Voeg toe"/>
+            <ListView x:Name="lvCourses" ItemsSource="{Binding courseCollection}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="80" Header="VakNaam" DisplayMemberBinding="{Binding CourseName}"  />
+                        <GridViewColumn Width="80" Header="VakCode" DisplayMemberBinding="{Binding CourseCode}" />
+                        <GridViewColumn Width="80" Header="SBU" DisplayMemberBinding="{Binding SBU}"  />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Window>
